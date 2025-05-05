@@ -1,0 +1,32 @@
+@Entity
+class Patient {
+  @Id @GeneratedValue Long id;
+  String name;
+  String contact;
+  String email;
+  String password;
+}
+
+@Entity
+class Doctor {
+  @Id @GeneratedValue Long id;
+  String name;
+  String specialization;
+}
+
+@Entity
+class Appointment {
+  @Id @GeneratedValue Long id;
+  LocalDate date;
+  LocalTime time;
+  @ManyToOne Patient patient;
+  @ManyToOne Doctor doctor;
+}
+
+@Entity
+class Medication {
+  @Id @GeneratedValue Long id;
+  String name;
+  String dosage;
+  @ManyToOne Patient patient;
+}
