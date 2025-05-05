@@ -1,0 +1,8 @@
+axios.post('/api/patients', {
+  name: 'John',
+  contact: '123456789',
+  email: 'john@gmail.com',
+  password: '1234'
+})
+.then(response => console.log(response))
+.catch(error => console.log(error));
